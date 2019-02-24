@@ -28,7 +28,3 @@ def login(request):
         #     return HttpResponse("登录成功")
     else:
         return JsonResponse({"success":"false","message":"请求方法不正确"})
-
-
-def user(request):
-    if (request.method == 'GET')
