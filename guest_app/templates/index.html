@@ -1,0 +1,123 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <!-- BS4样式网站：http://demo.cssmoban.com/cssthemes4/btzero_14_KrU/index.html -->
+
+<head>
+    <!-- cdn 下面五行很重要，会用就好，bootstrap4的资源 -->
+    <!-- <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdn.bootcss.com/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://cdn.bootcss.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://v3.bootcss.com/examples/signin/signin.css" crossorigin="anonymous">
+    -->
+    <!-- 使用静态CSS/JS -->
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static "css/bootstrap.min.css" %}">
+    <link rel="stylesheet" type="text/css" href="{% static "css/signin.css" %}">
+    <link type="text/js" href="{% static "js/bootstrap.min.js"%}">
+    <link type="text/js" href="{% static "js/jquery.slim.min.js"%}">
+    <link type="text/js" href="{% static "js/bootstrap.min.js"%}">
+
+
+    <meta charset="UTF-8">
+    <title>嘉宾管理系统</title>
+</head>
+<body>
+    <div class="bg">
+
+    <div class="container" style="width: 360px; padding-top: 100px;">
+
+      <form class="form-signin" action="/login_action/" method="post">
+        <h2 class="form-signin-heading login-tile">发布会管理系统</h2>
+        <label for="inputEmail" class="sr-only">Username</label>
+        <input type="text" id="inputEmail" class="form-control" name="username">
+        <label for="inputPassword" class="sr-only">Password</label>
+        <input type="password" id="inputPassword" class="form-control" name="password" style="
+    margin-top: 10px;
+">
+        <br>
+        <p style="color:red">{{ hint }}</p>
+        <button class="btn btn-lg btn-primary btn-block" type="submit">登录</button>
+      </form>
+    </div>
+    </div>
+
+    <!--<h1>嘉宾管理系统</h1>-->
+    <!--<form action="/login_action/", method="post">-->
+        <!--账号：<input type="text" name="username"><br>-->
+        <!--密码：<input type="password" name="password"><br>-->
+        <!--<p style="color:red;margin-top: 3px;margin-bottom: 5px;">-->
+            <!--{{ hint }}-->
+        <!--</p> <br>-->
+        <!--<button type="submit" value="submit">登陆</button>-->
+    <!--</form>-->
+
+
+    <!--
+        <button id="loginButton" type="button" value="submit">登陆</button>
+
+        这是一段前端js 代码，调用后端接口的实现
+        <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+    <script type="text/javascript">
+
+        $(document).ready(function(){
+          $("#loginButton").click(function(){
+            user = document.querySelector("[name='username']").value
+            pawd = document.querySelector("[name='password']").value
+            console.log("用户名：", user);
+            console.log("密码：", pawd);
+
+            $.post("api/login", {
+                username: user,
+                password: pawd
+                },
+                function(result){
+                    console.log("结果：", result);
+                    if(result.success === "false"){
+                       window.alert(result.message);
+                    }
+                //$("span").html(result);
+              });
+
+          });
+        });
+    </script> -->
+<style>
+  .bg{
+    background:url("/static/img/bg.jpg");
+    height: 600px;
+  }
+  .login-tile{
+    color:cadetblue;
+    text-align: center;
+  }
+
+</style>
+
+</body>
+
+
+</html>
+
+<!--<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>嘉宾管理系统</title>
+</head>
+<body>
+<h1>嘉宾管理系统</h1>
+
+<form action="/login_action/" method="post">
+    账号<input type="text" name="username"><br>
+    密码<input type="password" name="password"><br>
+    <p>
+
+    </p><br>
+
+    <button type="submit" name="submit">登录</button>
+</form>
+
+</body>
+</html> -->
